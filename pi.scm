@@ -1,6 +1,11 @@
+;; pi.scm
+;; Brandon Silver
+;; 2014-12-23
+;;
 ;; Calculates an upper bound for pi given number of steps.
 ;; This uses a linear iterative approach based on archimedes' original algorithm [0].
 ;; For additional (crappy) notes, see [1].
+;;
 ;;
 ;; [0]: http://mathworld.wolfram.com/ArchimedesAlgorithm.html
 ;; [1]: https://www.evernote.com/pub/view/bas1/2014spring/6deda844-50cf-4768-a902-0fbf0fd78888?locale=en#st=p&n=6deda844-50cf-4768-a902-0fbf0fd78888
@@ -27,7 +32,7 @@
   (* x x))
 
 ;; An improved version of SICP's square root algorithm. Its measure of "good-enough" is
-;; now based on the rate of convergence. 
+;; now based on the relative rate of convergence. 
 (define (sqrt x)
   (define (good-enough? prev-guess guess)
     (< (/ (abs (- guess prev-guess)) guess) 0.00001))
