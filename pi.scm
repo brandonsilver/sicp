@@ -35,7 +35,7 @@
 ;; now based on the relative rate of convergence. 
 (define (sqrt x)
   (define (good-enough? prev-guess guess)
-    (< (/ (abs (- guess prev-guess)) guess) 0.00001))
+    (< (/ (abs (- guess prev-guess)) guess) 0.0000000001))
   (define (improve guess)
     (average guess (/ x guess)))
   (define (sqrt-iter prev-guess guess)
